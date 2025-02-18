@@ -1328,14 +1328,14 @@ function AttackNoCoolDown()
     end
 end
 print("--[[Loaded UI]]--")
-Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Library/refs/heads/main/LibraryFluent.lua"))()
 Window = Fluent:CreateWindow({
     Title = "Hiru Hub-Blox Fruit",
     SubTitle = "by Kiddo",
     TabWidth = 155,
     Size = UDim2.fromOffset(555, 320),
     Acrylic = false, 
-    Theme = "Dark",
+    Theme = "Luffy",
     MinimizeKey = Enum.KeyCode.LeftControl 
 })
 Shop = Window:AddTab({ Title = "Tab Shop", Icon = "" })
