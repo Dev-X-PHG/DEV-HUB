@@ -2724,6 +2724,14 @@ spawn(function()
     end
 end)
 Main = Window:AddTab({ Title = "Tab Farming", Icon = "" })
+Main:AddButton({
+    Title = "Copy discord invite link",
+    Callback = function()
+        pcall(function()
+            setclipboard("https://discord.gg/c5EYjcvC")
+        end)
+    end
+})
 Main:AddParagraph({
      Title = "Main Farm",
      Content = string.rep("-", 21)
