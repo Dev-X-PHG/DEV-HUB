@@ -5298,6 +5298,31 @@ spawn(function()
         end
     end)
 end)
+Toggle = Sea:AddToggle("Toggle", {Title = "Auto Penetrate Rocks When Boat Runs", Default = true })
+Toggle:OnChanged(function(Value)
+    getgenv().GoThroughRocks = Value
+end)
+spawn(function()
+    while task.wait(1) do
+        if getgenv().GoThroughRocks or getgenv().SailBoat then
+            for _, boat in ipairs(game:GetService("Workspace").Boats:GetChildren()) do
+                for _, part in ipairs(boat:GetDescendants()) do
+                    if part:IsA("BasePart") then
+                        part.CanCollide = false
+                    end
+                end
+            end
+        else
+            for _, boat in ipairs(game:GetService("Workspace").Boats:GetChildren()) do
+                for _, part in ipairs(boat:GetDescendants()) do
+                    if part:IsA("BasePart") then
+                        part.CanCollide = true
+                    end
+                end
+            end
+        end
+    end
+end)
 Toggle = Sea:AddToggle("Toggle", {Title = "Auto Sea Event",Default = false })
 Toggle:OnChanged(function(state)
     getgenv().SailBoat = state
